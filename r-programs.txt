@@ -1,0 +1,41 @@
+Week 7 Hierachial clustering
+> distance = dist(mtcars,method="euclidean")
+> set.seed(250)
+> plot(hclust(distance, method="complete"))
+> plot(hclust(distance, method="average"))
+
+
+Week 8 Partitioning Cluster
+
+library(factoextra)
+set.seed(123)
+km_res <- kmeans(mtcars, 3, nstart = 25)
+# Visualize
+library("factoextra")
+fviz_cluster(km_res, data = mtcars,ellipse.type = "convex")
+
+
+Week 9 PIE Chart, Box plot & Bar Graph
+
+PIE
+> percent = c(sum(iris$Sepal.Length), sum(iris$Sepal.Width), sum(iris$Petal.Length), sum(iris$Petal.Width))
+> pie(percent, labels = c("SL","SW","PL","PW"))
+
+Box Plot
+> boxplot(Sepal.Length~Species, data = iris, col = c("Red","Green","Blue"))
+
+Bar Graph
+> barplot(percent, names.arg = c("SL","SW","PL","PW"),xlab="Iris Data",ylab="Sum of cols")
+
+
+Week 10 Histograms
+> hist(c(iris$Sepal.Length),main="Sepal Length")
+
+Week 11 Line Graph & Scatter Plot
+Line Graph
+> plot(iris$Petal.Length,type="o",col="red")
+> lines(iris$Sepal.Length,type="o",col="green")
+
+Scatter Plot
+> plot(x=iris$Sepal.Length,y=iris$Petal.Length,col=c("red","green"))
+
